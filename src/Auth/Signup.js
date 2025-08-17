@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { validateEmail } from "../utils/utils";
+import axios from "axios";
 
 function Signup(){
 
@@ -31,7 +32,7 @@ function handlePwordchange(event){
     setPword(event.target.value)
 }
 
-function handleCreateAccount(){
+async function handleCreateAccount(){
   var noOfErrors=0;
 
 
@@ -71,6 +72,16 @@ function handleCreateAccount(){
 
 if(noOfErrors == 0){
   console.log("Api calling is successfull")
+  var apiInputData = {
+    Name : name , Mobile : mobile , Email : email , Password :pword
+  }
+  var apiResponse= await axios.post("https://api.softwareschool.co/auth/signup" , apiInputData)
+console.log(apiResponse.data.result)
+
+if(apiResponse.result == "SUCCESS"){
+  
+}
+
 }
 
 
