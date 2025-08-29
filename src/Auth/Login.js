@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { validateEmail } from "../utils/utils";
+import axios from "axios";
 
 function Login(){
 
@@ -19,19 +20,31 @@ function Login(){
         setPword(event.target.value)
     }
 
-    function handleLogin(){
+   async function handleLogin(){
+        var noOfErrors=0;
         if(validateEmail(email)){
             setemailError("")
         }
         else{
             setemailError("Email is not valid")
+            noOfErrors++
         }
 
         if(pword.length < 7){
             setpwordError("Minimum 8 charcters")
+            noOfErrors++
         }
         else{
             setpwordError("")
+        }
+
+        if(noOfErrors== 0){
+            console("Api is calling")
+            var apiInputData ={
+                Email : email, password : pword
+            }
+           var ApiResponse = await axios.post("https://api.softwareschool.co/auth/login" , apiInputData)
+           console.log(ApiResponse.data.result)
         }
     }
 

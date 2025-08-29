@@ -5,6 +5,10 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Signup from './Auth/Signup';
 import Login from './Auth/Login';
 import Home from './Home/Home';
+import ProductsList from './Products/ProductsList';
+import ProfileUpdate from './Profile/ProfileUpdate';
+import Products from './ReadData/Products';
+import UsersList from './Users/UsersList';
 
 
 
@@ -16,6 +20,10 @@ root.render(
           <Route path='/Create-Account' Component={Signup}/>
           <Route path='/' Component={Home}/>
           <Route path='/Login' Component={Login}/>
+          <Route path='/Products' Component={ProductsList}/>
+          <Route path='/ProfileUpdate' Component={ProfileUpdate}/>
+          <Route path='/productsData' Component={Products}/>
+          <Route path='/users-List' Component={UsersList}/>
         </Routes>
     </BrowserRouter>
   </React.StrictMode>
