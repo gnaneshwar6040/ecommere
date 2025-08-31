@@ -13,11 +13,11 @@ function Home(){
                         <Header/>
                     </div>
 
-                    <div className="col-6 pt-5">
+                    <div className="col-lg-6 pt-5">
                         <h1>Dream software job in 6 months</h1>
                         <p>Learn in demand carrer paths from industry experts and become job ready</p>
                     </div>
-                    <div className="col-6 pt-5">
+                    <div className="col-lg-6 pt-5">
                         <TalkToUsForm message={HomePageMessage}/>
                     </div>
 

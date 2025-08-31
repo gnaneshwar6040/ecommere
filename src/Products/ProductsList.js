@@ -3,14 +3,15 @@ import Footer from "../Shared/Footer";
 import Header from "../Shared/Header";
 import axios from "axios";
 import Product from "./Product";
+import { useSelector } from "react-redux";
 
 function ProductsList(){
 
     let [products , setproducts]=useState([])
-    let [noOfCartItems , setnoOfCartItems] = useState(0)
+    let noOfCartItems = useSelector(state => state.cartItems)
 
     function updateCart(){
-        setnoOfCartItems(noOfCartItems++)
+      
     }
 
     useEffect( () => {
@@ -56,7 +57,7 @@ function ProductsList(){
              <div className="row mt-5 mb-5 ">
                <div className="col-12">
                  {
-                   <h4>Cart :{noOfCartItems} items</h4>
+                   <h4>Cart :{noOfCartItems.length} items</h4>
                  }
                </div>
                 {

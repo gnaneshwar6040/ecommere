@@ -9,12 +9,18 @@ import ProductsList from './Products/ProductsList';
 import ProfileUpdate from './Profile/ProfileUpdate';
 import Products from './ReadData/Products';
 import UsersList from './Users/UsersList';
+import Icons from './Home/Icons';
+import Layout from './Layout';
+import DataTest from './DataTest';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
+  
     <BrowserRouter>
         <Routes>
           <Route path='/Create-Account' Component={Signup}/>
@@ -24,9 +30,13 @@ root.render(
           <Route path='/ProfileUpdate' Component={ProfileUpdate}/>
           <Route path='/productsData' Component={Products}/>
           <Route path='/users-List' Component={UsersList}/>
+          <Route path='/Icons' Component={Icons}/>
+          <Route path='/Layout' Component={Layout} />
+          <Route path='/Redux' Component={DataTest}/>
         </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

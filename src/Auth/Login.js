@@ -43,8 +43,13 @@ function Login(){
             var apiInputData ={
                 Email : email, password : pword
             }
-           var ApiResponse = await axios.post("https://api.softwareschool.co/auth/login" , apiInputData)
-           console.log(ApiResponse.data.result)
+           var ApiResponse = await axios.post("https://dummyjson.com/auth/login" , ({
+    
+                            username: 'emilys',
+                            password: 'emilyspass',
+                            expiresInMins: 30, // optional, defaults to 60
+  }),)
+           console.log(ApiResponse)
         }
     }
 

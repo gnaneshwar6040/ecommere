@@ -1,6 +1,10 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 function Header(){
+
+    let count = useSelector(state => state.counter)
+    
     var [navClassList, setnavClassList]=useState("collapse navbar-collapse")
     var isNAvShowing=false
 
@@ -31,6 +35,9 @@ function Header(){
                     <li className="nav-item"><a href="/ProfileUpdate" className="nav-link">ProfileUpdate</a></li>
                     <li className="nav-item"><a href="/productsData" className="nav-link">ReadData</a></li>                                      
                     <li className="nav-item"><a href="/users-List" className="nav-link">Users</a></li>
+                    <li className="nav-item"><a href="/Icons" className="nav-link">Icons</a></li>
+                    <li className="nav-item"><a href="/Layout" className="nav-link">Layout</a></li>
+                    <li className="nav-item"><a href="/Redux" className="nav-link">Redux:{count}</a></li>
                     <li className="nav-item"><a href="/Login" className="nav-link">Login</a></li>
                     <li className="nav-item"><a href="/Create-Account" className="nav-link">SignUP</a></li>
                 </ul>
